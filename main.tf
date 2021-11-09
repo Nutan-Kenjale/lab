@@ -40,3 +40,21 @@ resource "google_compute_instance" "myvm1" {
          access_config{}
      }
 }
+
+
+resource "google_compute_instance" "myvm3" {
+    name  = "myfirstvm3"
+    zone = "us-central1-a"
+    machine_type = "f1-micro"
+    boot_disk {
+        initialize_params {
+            image = "debian-cloud/debian-10"
+
+        }
+    }
+
+     network_interface {
+         network = "default"
+         access_config{}
+     }
+}
